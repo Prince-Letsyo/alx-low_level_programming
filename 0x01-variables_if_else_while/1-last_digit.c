@@ -12,27 +12,24 @@
  */
 int main(void)
 {
-	int n;
+	int n, lastd;
 
 	srand(time(0));
 	n = rand() - RAND_MAX / 2;
 	/* your code goes there */
-	int size = sizeof(n) / sizeof(int);
-	char str[size];
-	int lastDigit;
+	lastd = n % 10;
 
-	sprintf(str, "%d", n);
-	sprintf(lastDigit, "%c", str[size - 1]);
-	printf("Last digit of %d is %c", n, str[size - 1]);
-	if (lastDigit > 5)
+	if (lastd > 5)
 	{
-		printf("and is greater than 5\n");
-	} else if (lastDigit == 0)
+		printf("Last digit of %d is %d and is greater than 5\n", n, lastd);
+	}
+	else if (lastd == 0)
 	{
-		printf("and is 0\n");
-	} else if (lastDigit < 6 && lastDigit != 0)
+		printf("Last digit of %d is %d and is 0\n", n, lastd);
+	}
+	else if (lastd < 6 && lastd != 0)
 	{
-		printf("and is less than 6 and not 0\n");
+		printf("Last digit of %d is %d and is less than 6 and not 0\n", n, lastd);
 	}
 	return (0);
 }
